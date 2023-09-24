@@ -1,88 +1,655 @@
 <!DOCTYPE html>
-<html  lang=en>
-  <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-  
-    
-    <link rel="shortcut icon" href="/images/favicon.ico ">
-    
-    
-    <link rel="icon" type="image/png" href="/images/favicon-android.png " sizes="192x192">
-    
-    
-    <link rel="apple-touch-icon" href="/images/favicon-apple.png " sizes="180x180">
-    
-  
-  <!-- title -->
-  <title>Hexo  </title>
-  <!-- styles -->
-  <!-- styles -->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.3.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
 
-<link rel="stylesheet" href="/styles/global.css">
+<link rel="stylesheet" href="/css/main.css">
 
-  <!-- rss -->
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="mainly techinical notes related to AI, ML; occasionally some business ideas">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://example.com/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="mainly techinical notes related to AI, ML; occasionally some business ideas">
+<meta property="og:locale" content="en_US">
+<meta property="article:author" content="Shawn Yiu">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://example.com/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : true,
+    isPost : false,
+    lang   : 'en'
+  };
+</script>
+
+  <title>Hexo</title>
   
-<meta name="generator" content="Hexo 6.3.0"></head>
-  <body>
-    <header id="header">
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --></head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Hexo</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">blog</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content index posts-expand">
+            
+      
   
-  <nav class="menu">
   
-    <a class="menu__item" href="/">主页</a>
-    <a class="menu__item" href="/archives/">归档</a>
-    <a class="menu__item" href="/categories/">专题</a>
-    <a class="menu__item" href="/tags/">标签</a>
-    <!-- <a class="menu__item" href="/">作品</a> -->
-    <!-- <a class="menu__item" href="/about/">关于</a> -->
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/09/24/2023-09-24/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Shawn Yiu">
+      <meta itemprop="description" content="mainly techinical notes related to AI, ML; occasionally some business ideas">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2023/09/24/2023-09-24/" class="post-title-link" itemprop="url">An intuitive way to understand information</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2023-09-24 15:28:46 / Modified: 21:14:07" itemprop="dateCreated datePublished" datetime="2023-09-24T15:28:46+08:00">2023-09-24</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1>An intuitive way to understand information</h1>
+<h2 id="Intro">Intro</h2>
+<p>We all know that information about the input can be stored in a hidden layer in some way that is very hard for us human to understand. But how do we understand this reality intuitively? This article provides an intuition behind it and some related experiments to support the intuition.</p>
+<h2 id="The-intuition">The intuition</h2>
+<ul>
+<li>For a certain hidden layer in a neural network, if we keep the output values of this layer fixed, we should be able to find a set of inputs that all forward propagate to this value (the input dimension has to be larger than the hidden layer, which is usually the case). This one-to-many relationship tells us that if we know the values of the hidden layer, we know that the input has to be one of those inputs in the set. <strong>The information of the hidden layer value equals to the corresponding solution set.</strong></li>
+<li>Furthermore, some <em>subset</em> of this set might share some common features (this is up to the weights and structure of the network). These common features are what we usually think the hidden layer value is representing.
+<ul>
+<li>As for why it’s a subset, I will be covering this in the second half of this article.</li>
+</ul>
+</li>
+</ul>
+<p><em>Notice that it is better to read this paragraph without resorting to notions like “entropy”, “mutual information”, etc. We just focus on feeling the reality as it is.</em></p>
+<h2 id="Investigation">Investigation</h2>
+<h3 id="How-do-we-get-the-solution-set">How do we get the solution set?</h3>
+<ul>
+<li>In a neural network, a hidden layer is just a group of mathematical expressions. When we want to get all inputs that eventually forward propagate to certain hidden layer value, we are actually trying to solve a system of mathematical expressions (non linear mostly).</li>
+<li>The algorithm of solving the equations in the context of neural network is as follows:</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">**Natural Language Format**</span><br><span class="line">1. The set that contains only our desired output is the initial output set</span><br><span class="line">2. For a certain layer, find all solutions that forward propagate to the valid output set. Take the intersection of the solutions and the range of the previous layer as the valid output set for the previous layer.</span><br><span class="line">3. Loop the above procedure through the neural network backwards</span><br><span class="line">4. The solution set of the first layer is the solution set of the neural network with respect to our desired output</span><br><span class="line"></span><br><span class="line">**Pseudo Code Format**</span><br><span class="line"># this function finds all solutions of a certain layer given a certain output</span><br><span class="line">def find_all_solutions_of_certain_layer(layer, output):</span><br><span class="line">    ### implementation</span><br><span class="line">    return solution_set</span><br><span class="line"></span><br><span class="line"># this function finds the range of a certain layer while all its inputs can move freely</span><br><span class="line">def find_the_range_of_certain_layer(layer):</span><br><span class="line">    ### implementation</span><br><span class="line">    return range</span><br><span class="line"></span><br><span class="line">layer_list = [Linear(64, 32), ReLU, Linear(32, 10), Softmax]   # only an example</span><br><span class="line">layer.reverse()   # reverse the neural network, since our solving process is backward</span><br><span class="line">output_set = ([0.02, 0.82, 0.02, 0.02, 0.02, 0.02, 0.02, 0.02, 0.02, 0.02])   # only an example, the initial set only contains one element, which is our ultimate required output</span><br><span class="line"></span><br><span class="line"># loop through the neural network backwards</span><br><span class="line">for layer in layers:</span><br><span class="line">    layer_range = find_the_range_of_certain_layer(layer)</span><br><span class="line">    valid_output_set = intersection(output_set, layer_range) </span><br><span class="line">    solutions = []</span><br><span class="line">    for output in valid_output_set:   # for every output in the valid set, find its solution set and combine them together</span><br><span class="line">        solutions.append(find_all_solutions_of_certain_layer(layer, output))</span><br><span class="line">    output_set = union(solutions)</span><br><span class="line"></span><br><span class="line">input_set = output_set  # solved!</span><br></pre></td></tr></table></figure>
+<ul>
+<li>The full version of the above algorithm is theoretically right but impossible to implement in reality. We can modify the algorithm a little bit so that it becomes implementable:
+<ul>
+<li>When finding solutions of a certain layer with respect to a particular output, we don’t find all of them. We only sample some solutions.</li>
+<li>The details of the implementation are in the Appendix.</li>
+</ul>
+</li>
+</ul>
+<p>From a certain perspective, in essence, the information loss is simply a many-to-one relationship. When you only know that “one”, you don’t know which “many” brings you here. The above algorithm is just finding that “many” with respect to the “one”.</p>
+<h3 id="What-does-the-solution-set-look-like">What does the solution set look like?</h3>
+<ul>
+<li>Let’s first look at an experiment of the above algorithm:</li>
+</ul>
+<h4 id="Experiment">Experiment</h4>
+<ul>
+<li><strong>Steps</strong>
+<ul>
+<li>Take a 2-layer fully connected network trained on MNIST dataset as an example.
+<ul>
+<li>The network structure is as follows: [Linear(784, 256), LeakyReLu(0.01), Linear(256, 10), Softmax]</li>
+<li>After training, the network reaches an accuracy of 94.31% on test dataset.</li>
+</ul>
+</li>
+<li>Randomly pick a picture from test dataset. Forward propagate the picture through the network. Record the final output.</li>
+<li>Back-solve the network with respect to the output mentioned above.</li>
+</ul>
+</li>
+<li><strong>Results</strong>
+<ul>
+<li>The left one is the randomly picked picture from test dataset. The right one is the solution input with respect to the output of the left one.</li>
+<li>
+<div style="display: flex; justify-content: space-between;">
+  <img src=3.png width=45% />
+  <img src=3s.png width=45% />
+  </div>
+  <br />
+</li>
+<li>
+<div style="display: flex; justify-content: space-between;">
+  <img src=6.png width=45% />
+  <img src=6s.png width=45% />
+  </div>
+  <br />
+</li>
+<li>
+<div style="display: flex; justify-content: space-between;">
+  <img src=9.png width=45% />
+  <img src=9s.png width=45% />
+  </div>
+</li>
+</ul>
+</li>
+<li><strong>Findings</strong>
+<ul>
+<li>Although the left and the right pictures share the same output that points to the label of the left one, the right one looks nothing like the left one.</li>
+</ul>
+</li>
+</ul>
+<p>Now let’s go back to the question of what the solution set looks like.</p>
+<ul>
+<li><strong>Imagine the shape of the solution input set</strong>
+<ul>
+<li>It is easier to first imagine <strong>the shape of the solutions of a linear layer</strong>.
+<ul>
+<li>Below is the uniform formula of linear equations:<br>
+$$x = x_s + \sum_i\epsilon_i * x_i$$</li>
+<li>$x_s$ represents the special solution, $x_i$ represents all null solutions, $\epsilon_i$ represents arbitrary number within $R$. The number of $x_i$ equals the number of free variables, which is smaller than the dimension of $x$.</li>
+<li><strong>Suppose the number of free variables is $n$ and the dimension of $x$ is $m$ ($m &gt; n$). Then the solution set of the linear layer is just a n-dimensional linear-shaped space in $R^m$ space.</strong></li>
+<li>In $R^2$, it is a line, a dot or an empty set. In $R^3$, it is a plane, a line, a dot or an empty set. We are able to get a very intuitive idea of what it looks like even in high dimensional space. It is linear and it stretches across the whole space.</li>
+<li><strong>Usually, we would have multiple outputs to back-solve in the middle of the neural network. In this case, the solution set of all valid outputs is just the union of different solution set of every valid output. After the union, many properties of a single solution set still remains, like some linear structure and the boundless stretching.</strong></li>
+</ul>
+</li>
+<li>Now let’s examine what role the nonlinear layer is playing.
+<ul>
+<li>Take ReLU as an example.
+<ul>
+<li>When back-solving the ReLU layer, for every element, as long as it is positive, the corresponding solution element is definite. If it is zero, the corresponding element can be any non-positive number. If it is negative, there are no corresponding solution. Imagine in a $R^3$ space, the solution is a 2D plane. The plane crosses “zero-plane” at some line. Everything on this plane after this line will be truncated since it is unreachable by ReLU function. Every point on the line will be extended vertically downward. So the solution set will be a bent plane. Nonlinearity is added and this nonlinearity will be remembered when back-solving through further layers.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Up to this point, I believe we could get a very intuitive idea about why the solution picture looks nothing like the original one.
+<ul>
+<li><strong>The solution set is not a perfect copy of the distribution consistent with human mindset. Instead, it just contains the part of  distribution that interects with the set of all naturally generated pictures. The true solution set is extremely complex and is the product of all those linear layers and nonlinear layers. It includes many other irrelevant candidates unavoidably.</strong></li>
+<li>The reason why neural network still works very well is that the inputs we usually feed in a network are already in the set of all naturally generated pictures.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>After thinking through the following things, I find many odd behaviors of neural networks intuitive.</p>
+<ul>
+<li>For example, we could fool the neural network to recognize an elephant as a koala by adding a tiny noise. And the two pictures look almost the same.
+<ul>
+<li>I think this is due to the extremely complex solution structure. What the network actually recognizes as a koala is a set containing both the normal koala pictures generated naturally and other solutions that radiate through the whole space. There are many solution candidates of koala just near an ordinary elephant picture. However, they are all beyond the normal scope of naturally generated pictures, which means they won’t interfere with the use of neural network.</li>
+</ul>
+</li>
+</ul>
+<div style="display: flex; justify-content: space-between;">
+<img src=elephants.jpg width=100% style="margin: 20px"/>
+<img src=koala_from_elephant.jpg width=100% style="margin: 20px"/>
+</div>
+<div style="display: flex; justify-content: space-between;">
+<p>elephant, according to VGG16 pretrained on Imagenet</p>
+<p>koala, according to VGG16 pretrained on Imagenet</p>
+</div>
+<br />
+<div style="display: flex; justify-content: space-between;">
+<img src=koala_from_elephant_minus.jpg width=100% style="margin: 20px"/>
+<img src=koala_from_elephant_minus_10times.jpg width=100% style="margin: 20px"/>
+</div>
+<div style="display: flex; justify-content: space-between;">
+<p>the difference between the above two pictures</p>
+<p>the difference after maginified ten times</p>
+</div>
+<h2 id="Appendix">Appendix</h2>
+<h3 id="Back-solver-Doc">Back-solver Doc</h3>
+<ul>
+<li>To facilitate finding the one-to-many relationship mentioned above, I wrote a tiny package for this specific use. For every layer, the package basically computes the solutions with respect to the required layer output. And this process is repeated from the last layer to the first layer. The intersection of all solutions of a certain layer and the range of the previous layer is the valid output of the previous layer. The solution set of the first layer is the solution of the whole neural network with respect to the initially dictated last layer output.</li>
+<li>The core of this package is a linear equation system solver using Gaussian elimination method. I implemented this solver using purely numpy basic methods. The linear solver is responsible for the “back-solving” process of all Linear layers and other layers that involves linear equations, like Softmax.
+<ul>
+<li>Precision plays a very important role in solving linear equations, since the computer performs finite digit operations at the very bottom. According to my experiment, when the matrix gets bigger and complex, low precision will result in answers that have non-negligible error. The solution is to use high enough precision. I used numpy.float64, which worked well in my experiment context.</li>
+<li>Another thing to mention is that this solver couldn’t solve every linear equations. For those systems that will encounter absolute zero during elimination, the finite nature of computer will sometimes result in a non-zero number where it should be a zero instead. This makes a huge difference. Because it can’t be mitigated by increasing the precision. Luckily, the probability that we encounter this type of situation is zero. So we can just ignore this scenario and apply Gaussian elimination on the computer anyway.</li>
+</ul>
+</li>
+<li>In the <a target="_blank" rel="noopener" href="http://engine.py">engine.py</a>, I wrote the base class that is responsible for sample solutions from the solution set. For every type of neural network layer, we could implement a subclass that performs the “back-solving” and “sampling” steps. I only implement the subclass for linear layer, softmax, relu and leaky relu.</li>
+<li>The package is incomplete in the following aspects:
+<ul>
+<li>The sampling method needs to be further studied.</li>
+<li>We need a way to constrain the sampled solutions to be in a certain range, since layers like relu only output values in a give range.</li>
+<li>More subclasses to be implemented</li>
+<li>More robust linear equation system solver needed</li>
+<li>…</li>
+</ul>
+</li>
+<li>Here is the repo link to the package:
+<ul>
+<li><a target="_blank" rel="noopener" href="https://github.com/scottyaohk/Back-solve-neural-network">https://github.com/scottyaohk/Back-solve-neural-network</a></li>
+</ul>
+</li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/09/14/ChatWithAuthor/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Shawn Yiu">
+      <meta itemprop="description" content="mainly techinical notes related to AI, ML; occasionally some business ideas">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2023/09/14/ChatWithAuthor/" class="post-title-link" itemprop="url">ChatWithAuthor</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2023-09-14 10:07:16 / Modified: 11:03:31" itemprop="dateCreated datePublished" datetime="2023-09-14T10:07:16+08:00">2023-09-14</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1>Chat with Author</h1>
+<h2 id="Intro">Intro</h2>
+<p>This is a project that let you chat with any characters. For example, you can chat with Karl Marx (the author of Das Kapital), Siddhartha (the protagonist in Hermann Hesse’s book), etc. Let’s first see the demo.</p>
+<p><img src="ChatWithAuthor/siddhartha_emb.jpeg" alt="unavailable" title="asking Marx.ai how to reach communism"><br>
+<img src="ChatWithAuthor/marx_emb.jpeg" alt="unavailable" title="asking Marx.ai how to reach communism"></p>
+<h2 id="Implementation">Implementation</h2>
+<p>The implementation of this chatbot is incredibly simple. With langchain and gradio, the whole stack can be built within 70 lines of code.<br>
+Take the Marx chatbot as an example:</p>
+<ul>
+<li>I first downloaded Das Kapital from Internet. Then use langchain to divide the texts into chunks and there should be some overlap between chunks, to ensure the integrity of sentences. I set the chunk size and overlap to 600 and 100.</li>
+<li>For each chunk, we need to calculate the embedding, which represent the “meaning” of this chunk. This step can be easily done with langchain and a vector database like FAISS. Btw, the cost of calculating embedding is very small, since the API of openai embedding model is very cheap.</li>
+<li>Now is the time to build the chatbot itself. We just make some variation to the traditional chatbot. When we pass in the question, we first calculate the embedding of the question and search through the vector database to find the most similar chunk. Here the similarity of “meaning” is measured by the distance of the two embeddings. (worth further exploring)</li>
+<li>After we find the closest chunk, we plug it into our prompt. Pass the prompt to openai to fetch the answer.</li>
+<li>Use gradio to build the interface.</li>
+</ul>
+<p>Link to the repo: []</p>
+<h2 id="Further-Improvements">Further Improvements</h2>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Shawn Yiu</p>
+  <div class="site-description" itemprop="description">mainly techinical notes related to AI, ML; occasionally some business ideas</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">2</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
   </nav>
-</header>
-    <main>
-      <section class="block">
-  
-  
-  <div class="block__item">
-    
-<time class="block__date" datetime="2023-09-24T07:28:46.000Z" itemprop="datePublished">
-  
-  2023-09-24
-</time>
+</div>
 
-    <a class="block__title" href="/2023/09/24/2023-09-24/">An intuitive way to understand information </a>
-    <p class="block__excerpt"></p>
-  </div>
-  
-  <div class="block__item">
-    
-<time class="block__date" datetime="2023-09-14T02:07:16.000Z" itemprop="datePublished">
-  
-  2023-09-14
-</time>
 
-    <a class="block__title" href="/2023/09/14/ChatWithAuthor/">ChatWithAuthor </a>
-    <p class="block__excerpt"></p>
-  </div>
-  
-  <a class="block__more" href="/archives/">More </a>
-</section>
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
     </main>
-    <footer id="footer">
-  Copyright &copy;
-  2023
-  Shawn Yiu
-  
-  
-    <a class="social-links" target="_blank" rel="noopener" href="https://github.com/jylzs369"><i class="blogfont">&#xe6b7; </i></a>
-  
-    <a class="social-links" href="mailto:jylzs369@163.com"><i class="blogfont">&#xe61a; </i></a>
-  
-    <a class="social-links" href="/atom.xml"><i class="blogfont">&#xe640; </i></a>
-  
-  
-</footer>
-    <!-- scripts -->
 
-<script src="/scripts/main.js"></script>
+    <footer class="footer">
+      <div class="footer-inner">
+        
 
-  </body>
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Shawn Yiu</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a>
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
+
+  
+
+</body>
 </html>
