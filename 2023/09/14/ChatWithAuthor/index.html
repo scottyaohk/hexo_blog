@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html  lang=en>
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  
+    
+    <link rel="shortcut icon" href="/images/favicon.ico ">
+    
+    
+    <link rel="icon" type="image/png" href="/images/favicon-android.png " sizes="192x192">
+    
+    
+    <link rel="apple-touch-icon" href="/images/favicon-apple.png " sizes="180x180">
+    
+  
+  <!-- title -->
+  <title>Hexo ChatWithAuthor </title>
+  <!-- styles -->
+  <!-- styles -->
+
+<link rel="stylesheet" href="/styles/global.css">
+
+  <!-- rss -->
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+  <body>
+    <header id="header">
+  
+  <nav class="menu menu--right">
+  
+    <a class="menu__item" href="/">主页</a>
+    <a class="menu__item" href="/archives/">归档</a>
+    <a class="menu__item" href="/categories/">专题</a>
+    <a class="menu__item" href="/tags/">标签</a>
+    <!-- <a class="menu__item" href="/">作品</a> -->
+    <!-- <a class="menu__item" href="/about/">关于</a> -->
+  </nav>
+</header>
+    <main>
+      <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post__header">
+  <h1 class="post__title">ChatWithAuthor</h1>
+  
+  
+  <div class="post__meta">
+    
+<time class="post__date" datetime="2023-09-14T02:07:16.000Z" itemprop="datePublished">
+  
+  <i class="blogfont">&#xedff;</i>
+  
+  2023-09-14 10:07:16
+</time>
+
+    
+
+    
+
+    <div id="/2023/09/14/ChatWithAuthor/" class="leancloud_visitors post__stat" data-flag-title="ChatWithAuthor">
+  <i class="blogfont">&#xe672;</i>
+  <span class="leancloud-visitors-count">loading...</span>
+</div>
+  </div>
+</header>
+  <aside class="post__aside">
+  <div class="post__actions">
+    <a id="backTop" class="post__top" href="javascript:">
+      <i class="blogfont">&#xe6b1;</i><!-- Top -->
+    </a>
+    <a id="share" class="post__share" href="javascript:">
+      <i class="blogfont">&#xe6c1;</i>
+    </a>
+  </div>
+  <ol class="post__toc"><li class="post__toc-item post__toc-level-1"><a class="post__toc-link" href="#Chat-with-Author"><span class="post__toc-text">Chat with Author</span></a><ol class="post__toc-child"><li class="post__toc-item post__toc-level-2"><a class="post__toc-link" href="#Intro"><span class="post__toc-text">Intro</span></a></li><li class="post__toc-item post__toc-level-2"><a class="post__toc-link" href="#Implementation"><span class="post__toc-text">Implementation</span></a></li><li class="post__toc-item post__toc-level-2"><a class="post__toc-link" href="#Further-Improvements"><span class="post__toc-text">Further Improvements</span></a></li></ol></li></ol>
+</aside>
+  <div class="post__content" itemprop="articleBody">
+    <h1 id="Chat-with-Author"><a href="#Chat-with-Author" class="headerlink" title="Chat with Author"></a>Chat with Author</h1><h2 id="Intro"><a href="#Intro" class="headerlink" title="Intro"></a>Intro</h2><p>This is a project that let you chat with any characters. For example, you can chat with Karl Marx (the author of Das Kapital), Siddhartha (the protagonist in Hermann Hesse’s book), etc. Let’s first see the demo.</p>
+<p><img src="/ChatWithAuthor/siddhartha_emb.jpeg" alt="unavailable" title="asking Marx.ai how to reach communism"><br><img src="/ChatWithAuthor/marx_emb.jpeg" alt="unavailable" title="asking Marx.ai how to reach communism"></p>
+<h2 id="Implementation"><a href="#Implementation" class="headerlink" title="Implementation"></a>Implementation</h2><p>The implementation of this chatbot is incredibly simple. With langchain and gradio, the whole stack can be built within 70 lines of code.<br>Take the Marx chatbot as an example:</p>
+<ul>
+<li>I first downloaded Das Kapital from Internet. Then use langchain to divide the texts into chunks and there should be some overlap between chunks, to ensure the integrity of sentences. I set the chunk size and overlap to 600 and 100.</li>
+<li>For each chunk, we need to calculate the embedding, which represent the “meaning” of this chunk. This step can be easily done with langchain and a vector database like FAISS. Btw, the cost of calculating embedding is very small, since the API of openai embedding model is very cheap.</li>
+<li>Now is the time to build the chatbot itself. We just make some variation to the traditional chatbot. When we pass in the question, we first calculate the embedding of the question and search through the vector database to find the most similar chunk. Here the similarity of “meaning” is measured by the distance of the two embeddings. (worth further exploring)</li>
+<li>After we find the closest chunk, we plug it into our prompt. Pass the prompt to openai to fetch the answer.</li>
+<li>Use gradio to build the interface.</li>
+</ul>
+<p>Link to the repo: []</p>
+<h2 id="Further-Improvements"><a href="#Further-Improvements" class="headerlink" title="Further Improvements"></a>Further Improvements</h2>
+  </div>
+  
+</article>
+    </main>
+    <footer id="footer">
+  Copyright &copy;
+  2023
+  Shawn Yiu
+  
+  
+    <a class="social-links" target="_blank" rel="noopener" href="https://github.com/jylzs369"><i class="blogfont">&#xe6b7; </i></a>
+  
+    <a class="social-links" href="mailto:jylzs369@163.com"><i class="blogfont">&#xe61a; </i></a>
+  
+    <a class="social-links" href="/atom.xml"><i class="blogfont">&#xe640; </i></a>
+  
+  
+</footer>
+    <!-- scripts -->
+
+<script src="/scripts/main.js"></script>
+
+  </body>
+</html>
