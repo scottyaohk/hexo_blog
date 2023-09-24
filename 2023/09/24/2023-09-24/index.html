@@ -1,79 +1,108 @@
-<!DOCTYPE html><html><head>
-      <title>info_perspective</title>
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      
-<pre><code>  &lt;link rel=&quot;stylesheet&quot; href=&quot;file:////Users/yaoxiang/.vscode/extensions/shd101wyy.markdown-preview-enhanced-0.7.9/crossnote/dependencies/katex/katex.min.css&quot;&gt;
+<!DOCTYPE html>
+<html  lang=en>
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
   
+    
+    <link rel="shortcut icon" href="/images/favicon.ico ">
+    
+    
+    <link rel="icon" type="image/png" href="/images/favicon-android.png " sizes="192x192">
+    
+    
+    <link rel="apple-touch-icon" href="/images/favicon-apple.png " sizes="180x180">
+    
   
-  
-  
-  
-  &lt;style&gt;
-  code[class*=language-],pre[class*=language-]&#123;color:#333;background:0 0;font-family:Consolas,&quot;Liberation Mono&quot;,Menlo,Courier,monospace;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.4;-moz-tab-size:8;-o-tab-size:8;tab-size:8;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none&#125;pre[class*=language-]&#123;padding:.8em;overflow:auto;border-radius:3px;background:#f5f5f5&#125;:not(pre)&gt;code[class*=language-]&#123;padding:.1em;border-radius:.3em;white-space:normal;background:#f5f5f5&#125;.token.blockquote,.token.comment&#123;color:#969896&#125;.token.cdata&#123;color:#183691&#125;.token.doctype,.token.macro.property,.token.punctuation,.token.variable&#123;color:#333&#125;.token.builtin,.token.important,.token.keyword,.token.operator,.token.rule&#123;color:#a71d5d&#125;.token.attr-value,.token.regex,.token.string,.token.url&#123;color:#183691&#125;.token.atrule,.token.boolean,.token.code,.token.command,.token.constant,.token.entity,.token.number,.token.property,.token.symbol&#123;color:#0086b3&#125;.token.prolog,.token.selector,.token.tag&#123;color:#63a35c&#125;.token.attr-name,.token.class,.token.class-name,.token.function,.token.id,.token.namespace,.token.pseudo-class,.token.pseudo-element,.token.url-reference .token.variable&#123;color:#795da3&#125;.token.entity&#123;cursor:help&#125;.token.title,.token.title .token.punctuation&#123;font-weight:700;color:#1d3e81&#125;.token.list&#123;color:#ed6a43&#125;.token.inserted&#123;background-color:#eaffea;color:#55a532&#125;.token.deleted&#123;background-color:#ffecec;color:#bd2c00&#125;.token.bold&#123;font-weight:700&#125;.token.italic&#123;font-style:italic&#125;.language-json .token.property&#123;color:#183691&#125;.language-markup .token.tag .token.punctuation&#123;color:#333&#125;.language-css .token.function,code.language-css&#123;color:#0086b3&#125;.language-yaml .token.atrule&#123;color:#63a35c&#125;code.language-yaml&#123;color:#183691&#125;.language-ruby .token.function&#123;color:#333&#125;.language-markdown .token.url&#123;color:#795da3&#125;.language-makefile .token.symbol&#123;color:#795da3&#125;.language-makefile .token.variable&#123;color:#183691&#125;.language-makefile .token.builtin&#123;color:#0086b3&#125;.language-bash .token.keyword&#123;color:#0086b3&#125;pre[data-line]&#123;position:relative;padding:1em 0 1em 3em&#125;pre[data-line] .line-highlight-wrapper&#123;position:absolute;top:0;left:0;background-color:transparent;display:block;width:100%&#125;pre[data-line] .line-highlight&#123;position:absolute;left:0;right:0;padding:inherit 0;margin-top:1em;background:hsla(24,20%,50%,.08);background:linear-gradient(to right,hsla(24,20%,50%,.1) 70%,hsla(24,20%,50%,0));pointer-events:none;line-height:inherit;white-space:pre&#125;pre[data-line] .line-highlight:before,pre[data-line] .line-highlight[data-end]:after&#123;content:attr(data-start);position:absolute;top:.4em;left:.6em;min-width:1em;padding:0 .5em;background-color:hsla(24,20%,50%,.4);color:#f4f1ef;font:bold 65%/1.5 sans-serif;text-align:center;vertical-align:.3em;border-radius:999px;text-shadow:none;box-shadow:0 1px #fff&#125;pre[data-line] .line-highlight[data-end]:after&#123;content:attr(data-end);top:auto;bottom:.4em&#125;html body&#123;font-family:&quot;Helvetica Neue&quot;,Helvetica,&quot;Segoe UI&quot;,Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;box-sizing:border-box;word-wrap:break-word&#125;html body&gt;:first-child&#123;margin-top:0&#125;html body h1,html body h2,html body h3,html body h4,html body h5,html body h6&#123;line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000&#125;html body h1&#123;font-size:2.25em;font-weight:300;padding-bottom:.3em&#125;html body h2&#123;font-size:1.75em;font-weight:400;padding-bottom:.3em&#125;html body h3&#123;font-size:1.5em;font-weight:500&#125;html body h4&#123;font-size:1.25em;font-weight:600&#125;html body h5&#123;font-size:1.1em;font-weight:600&#125;html body h6&#123;font-size:1em;font-weight:600&#125;html body h1,html body h2,html body h3,html body h4,html body h5&#123;font-weight:600&#125;html body h5&#123;font-size:1em&#125;html body h6&#123;color:#5c5c5c&#125;html body strong&#123;color:#000&#125;html body del&#123;color:#5c5c5c&#125;html body a:not([href])&#123;color:inherit;text-decoration:none&#125;html body a&#123;color:#08c;text-decoration:none&#125;html body a:hover&#123;color:#00a3f5;text-decoration:none&#125;html body img&#123;max-width:100%&#125;html body&gt;p&#123;margin-top:0;margin-bottom:16px;word-wrap:break-word&#125;html body&gt;ol,html body&gt;ul&#123;margin-bottom:16px&#125;html body ol,html body ul&#123;padding-left:2em&#125;html body ol.no-list,html body ul.no-list&#123;padding:0;list-style-type:none&#125;html body ol ol,html body ol ul,html body ul ol,html body ul ul&#123;margin-top:0;margin-bottom:0&#125;html body li&#123;margin-bottom:0&#125;html body li.task-list-item&#123;list-style:none&#125;html body li&gt;p&#123;margin-top:0;margin-bottom:0&#125;html body .task-list-item-checkbox&#123;margin:0 .2em .25em -1.8em;vertical-align:middle&#125;html body .task-list-item-checkbox:hover&#123;cursor:pointer&#125;html body blockquote&#123;margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;background-color:#f0f0f0;border-left:4px solid #d6d6d6&#125;html body blockquote&gt;:first-child&#123;margin-top:0&#125;html body blockquote&gt;:last-child&#123;margin-bottom:0&#125;html body hr&#123;height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none&#125;html body table&#123;margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all&#125;html body table th&#123;font-weight:700;color:#000&#125;html body table td,html body table th&#123;border:1px solid #d6d6d6;padding:6px 13px&#125;html body dl&#123;padding:0&#125;html body dl dt&#123;padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:700&#125;html body dl dd&#123;padding:0 16px;margin-bottom:16px&#125;html body code&#123;font-family:Menlo,Monaco,Consolas,&#39;Courier New&#39;,monospace;font-size:.85em!important;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0&#125;html body code::after,html body code::before&#123;letter-spacing:-.2em;content:&quot;\00a0&quot;&#125;html body pre&gt;code&#123;padding:0;margin:0;font-size:.85em!important;word-break:normal;white-space:pre;background:0 0;border:0&#125;html body .highlight&#123;margin-bottom:16px&#125;html body .highlight pre,html body pre&#123;padding:1em;overflow:auto;font-size:.85em!important;line-height:1.45;border:#d6d6d6;border-radius:3px&#125;html body .highlight pre&#123;margin-bottom:0;word-break:normal&#125;html body pre code,html body pre tt&#123;display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0&#125;html body pre code:after,html body pre code:before,html body pre tt:after,html body pre tt:before&#123;content:normal&#125;html body blockquote,html body dl,html body ol,html body p,html body pre,html body ul&#123;margin-top:0;margin-bottom:16px&#125;html body kbd&#123;color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px&#125;@media print&#123;html body&#123;background-color:#fff&#125;html body h1,html body h2,html body h3,html body h4,html body h5,html body h6&#123;color:#000;page-break-after:avoid&#125;html body blockquote&#123;color:#5c5c5c&#125;html body pre&#123;page-break-inside:avoid&#125;html body table&#123;display:table&#125;html body img&#123;display:block;max-width:100%;max-height:100%&#125;html body code,html body pre&#123;word-wrap:break-word;white-space:pre&#125;&#125;.markdown-preview&#123;width:100%;height:100%;box-sizing:border-box&#125;.markdown-preview .newpage,.markdown-preview .pagebreak&#123;page-break-before:always&#125;.markdown-preview pre.line-numbers&#123;position:relative;padding-left:3.8em;counter-reset:linenumber&#125;.markdown-preview pre.line-numbers&gt;code&#123;position:relative&#125;.markdown-preview pre.line-numbers .line-numbers-rows&#123;position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none&#125;.markdown-preview pre.line-numbers .line-numbers-rows&gt;span&#123;pointer-events:none;display:block;counter-increment:linenumber&#125;.markdown-preview pre.line-numbers .line-numbers-rows&gt;span:before&#123;content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right&#125;.markdown-preview .mathjax-exps .MathJax_Display&#123;text-align:center!important&#125;.markdown-preview:not([data-for=preview]) .code-chunk .btn-group&#123;display:none&#125;.markdown-preview:not([data-for=preview]) .code-chunk .status&#123;display:none&#125;.markdown-preview:not([data-for=preview]) .code-chunk .output-div&#123;margin-bottom:16px&#125;.markdown-preview .md-toc&#123;padding:0&#125;.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link&#123;display:inline;padding:.25rem 0&#125;.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link div,.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link p&#123;display:inline&#125;.markdown-preview .md-toc .md-toc-link-wrapper.highlighted .md-toc-link&#123;font-weight:800&#125;.scrollbar-style::-webkit-scrollbar&#123;width:8px&#125;.scrollbar-style::-webkit-scrollbar-track&#123;border-radius:10px;background-color:transparent&#125;.scrollbar-style::-webkit-scrollbar-thumb&#123;border-radius:5px;background-color:rgba(150,150,150,.66);border:4px solid rgba(150,150,150,.66);background-clip:content-box&#125;html body[for=html-export]:not([data-presentation-mode])&#123;position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto&#125;html body[for=html-export]:not([data-presentation-mode]) .markdown-preview&#123;position:relative;top:0;min-height:100vh&#125;@media screen and (min-width:914px)&#123;html body[for=html-export]:not([data-presentation-mode]) .markdown-preview&#123;padding:2em calc(50% - 457px + 2em)&#125;&#125;@media screen and (max-width:914px)&#123;html body[for=html-export]:not([data-presentation-mode]) .markdown-preview&#123;padding:2em&#125;&#125;@media screen and (max-width:450px)&#123;html body[for=html-export]:not([data-presentation-mode]) .markdown-preview&#123;font-size:14px!important;padding:1em&#125;&#125;@media print&#123;html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn&#123;display:none&#125;&#125;html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn&#123;position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4&#125;html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn&#123;opacity:1&#125;html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc&#123;position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,.33);box-sizing:border-box;overflow:auto;background-color:inherit&#125;html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar&#123;width:8px&#125;html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track&#123;border-radius:10px;background-color:transparent&#125;html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb&#123;border-radius:5px;background-color:rgba(150,150,150,.66);border:4px solid rgba(150,150,150,.66);background-clip:content-box&#125;html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a&#123;text-decoration:none&#125;html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc&#123;padding:0 16px&#125;html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link&#123;display:inline;padding:.25rem 0&#125;html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link div,html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link p&#123;display:inline&#125;html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper.highlighted .md-toc-link&#123;font-weight:800&#125;html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview&#123;left:300px;width:calc(100% - 300px);padding:2em calc(50% - 457px - 300px/2);margin:0;box-sizing:border-box&#125;@media screen and (max-width:1274px)&#123;html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview&#123;padding:2em&#125;&#125;@media screen and (max-width:450px)&#123;html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview&#123;width:100%&#125;&#125;html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview&#123;left:50%;transform:translateX(-50%)&#125;html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc&#123;display:none&#125;
-</code></pre>
-<p>&#x2F;* Please visit the URL below for more information: <em>&#x2F;<br>&#x2F;</em>   <a href="https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css">https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css</a> *&#x2F;</p>
-<pre><code>  &lt;/style&gt;
-  
-&lt;/head&gt;
-&lt;body for=&quot;html-export&quot;&gt;
-  &lt;div class=&quot;crossnote markdown-preview  &quot;&gt;
-  &lt;h1 class=&quot;crossnote-header&quot; id=&quot;an-intuitive-way-to-understand-information&quot;&gt;An intuitive way to understand information&lt;/h1&gt;
-</code></pre>
-<h2 class="crossnote-header" id="intro">Intro</h2>
+  <!-- title -->
+  <title>Hexo An intuitive way to understand information </title>
+  <!-- styles -->
+  <!-- styles -->
 
-<p>We all know that information about the input can be stored in a hidden layer in some way that is very hard for us human to understand. But how do we understand this reality intuitively? This article provides an intuition behind it and some related experiments to support the intuition.</p>
-<h2 class="crossnote-header" id="the-intuition">The intuition</h2>
+<link rel="stylesheet" href="/styles/global.css">
 
-<ul>
+  <!-- rss -->
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+  <body>
+    <header id="header">
+  
+  <nav class="menu menu--right">
+  
+    <a class="menu__item" href="/">主页</a>
+    <a class="menu__item" href="/archives/">归档</a>
+    <a class="menu__item" href="/categories/">专题</a>
+    <a class="menu__item" href="/tags/">标签</a>
+    <!-- <a class="menu__item" href="/">作品</a> -->
+    <!-- <a class="menu__item" href="/about/">关于</a> -->
+  </nav>
+</header>
+    <main>
+      <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post__header">
+  <h1 class="post__title">An intuitive way to understand information</h1>
+  
+  
+  <div class="post__meta">
+    
+<time class="post__date" datetime="2023-09-24T07:28:46.000Z" itemprop="datePublished">
+  
+  <i class="blogfont">&#xedff;</i>
+  
+  2023-09-24 15:28:46
+</time>
+
+    
+
+    
+
+    <div id="/2023/09/24/2023-09-24/" class="leancloud_visitors post__stat" data-flag-title="An intuitive way to understand information">
+  <i class="blogfont">&#xe672;</i>
+  <span class="leancloud-visitors-count">loading...</span>
+</div>
+  </div>
+</header>
+  <aside class="post__aside">
+  <div class="post__actions">
+    <a id="backTop" class="post__top" href="javascript:">
+      <i class="blogfont">&#xe6b1;</i><!-- Top -->
+    </a>
+    <a id="share" class="post__share" href="javascript:">
+      <i class="blogfont">&#xe6c1;</i>
+    </a>
+  </div>
+  <ol class="post__toc"><li class="post__toc-item post__toc-level-1"><a class="post__toc-link" href="#An-intuitive-way-to-understand-information"><span class="post__toc-text">An intuitive way to understand information</span></a><ol class="post__toc-child"><li class="post__toc-item post__toc-level-2"><a class="post__toc-link" href="#Intro"><span class="post__toc-text">Intro</span></a></li><li class="post__toc-item post__toc-level-2"><a class="post__toc-link" href="#The-intuition"><span class="post__toc-text">The intuition</span></a></li><li class="post__toc-item post__toc-level-2"><a class="post__toc-link" href="#Investigation"><span class="post__toc-text">Investigation</span></a><ol class="post__toc-child"><li class="post__toc-item post__toc-level-3"><a class="post__toc-link" href="#How-do-we-get-the-solution-set"><span class="post__toc-text">How do we get the solution set?</span></a></li><li class="post__toc-item post__toc-level-3"><a class="post__toc-link" href="#What-does-the-solution-set-look-like"><span class="post__toc-text">What does the solution set look like?</span></a><ol class="post__toc-child"><li class="post__toc-item post__toc-level-4"><a class="post__toc-link" href="#Experiment"><span class="post__toc-text">Experiment</span></a></li></ol></li></ol></li><li class="post__toc-item post__toc-level-2"><a class="post__toc-link" href="#Appendix"><span class="post__toc-text">Appendix</span></a><ol class="post__toc-child"><li class="post__toc-item post__toc-level-3"><a class="post__toc-link" href="#Back-solver-Doc"><span class="post__toc-text">Back-solver Doc</span></a></li></ol></li></ol></li></ol>
+</aside>
+  <div class="post__content" itemprop="articleBody">
+    <h1 id="An-intuitive-way-to-understand-information"><a href="#An-intuitive-way-to-understand-information" class="headerlink" title="An intuitive way to understand information"></a>An intuitive way to understand information</h1><h2 id="Intro"><a href="#Intro" class="headerlink" title="Intro"></a>Intro</h2><p>We all know that information about the input can be stored in a hidden layer in some way that is very hard for us human to understand. But how do we understand this reality intuitively? This article provides an intuition behind it and some related experiments to support the intuition.</p>
+<h2 id="The-intuition"><a href="#The-intuition" class="headerlink" title="The intuition"></a>The intuition</h2><ul>
 <li>For a certain hidden layer in a neural network, if we keep the output values of this layer fixed, we should be able to find a set of inputs that all forward propagate to this value (the input dimension has to be larger than the hidden layer, which is usually the case). This one-to-many relationship tells us that if we know the values of the hidden layer, we know that the input has to be one of those inputs in the set. <strong>The information of the hidden layer value equals to the corresponding solution set.</strong></li>
-<li>Furthermore, some <em>subset</em> of this set might share some common features (this is up to the weights and structure of the network). These common features are what we usually think the hidden layer value is representing.
-<ul>
-<li>As for why it's a subset, I will be covering this in the second half of this article.</li>
+<li>Furthermore, some <em>subset</em> of this set might share some common features (this is up to the weights and structure of the network). These common features are what we usually think the hidden layer value is representing.<ul>
+<li>As for why it’s a subset, I will be covering this in the second half of this article.</li>
 </ul>
 </li>
 </ul>
-<p><em>Notice that it is better to read this paragraph without resorting to notions like "entropy", "mutual information", etc. We just focus on feeling the reality as it is.</em></p>
-<h2 class="crossnote-header" id="investigation">Investigation</h2>
-
-<h3 class="crossnote-header" id="how-do-we-get-the-solution-set">How do we get the solution set?</h3>
-
+<p><em>Notice that it is better to read this paragraph without resorting to notions like “entropy”, “mutual information”, etc. We just focus on feeling the reality as it is.</em></p>
+<h2 id="Investigation"><a href="#Investigation" class="headerlink" title="Investigation"></a>Investigation</h2><h3 id="How-do-we-get-the-solution-set"><a href="#How-do-we-get-the-solution-set" class="headerlink" title="How do we get the solution set?"></a>How do we get the solution set?</h3><ul>
+<li><p>In a neural network, a hidden layer is just a group of mathematical expressions. When we want to get all inputs that eventually forward propagate to certain hidden layer value, we are actually trying to solve a system of mathematical expressions (non linear mostly). </p>
+</li>
+<li><p>The algorithm of solving the equations in the context of neural network is as follows:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">**Natural Language Format**</span><br><span class="line">1. The set that contains only our desired output is the initial output set</span><br><span class="line">2. For a certain layer, find all solutions that forward propagate to the valid output set. Take the intersection of the solutions and the range of the previous layer as the valid output set for the previous layer.</span><br><span class="line">3. Loop the above procedure through the neural network backwards</span><br><span class="line">4. The solution set of the first layer is the solution set of the neural network with respect to our desired output</span><br><span class="line"></span><br><span class="line">**Pseudo Code Format**</span><br><span class="line"># this function finds all solutions of a certain layer given a certain output</span><br><span class="line">def find_all_solutions_of_certain_layer(layer, output):</span><br><span class="line">    ### implementation</span><br><span class="line">    return solution_set</span><br><span class="line"></span><br><span class="line"># this function finds the range of a certain layer while all its inputs can move freely</span><br><span class="line">def find_the_range_of_certain_layer(layer):</span><br><span class="line">    ### implementation</span><br><span class="line">    return range</span><br><span class="line"></span><br><span class="line">layer_list = [Linear(64, 32), ReLU, Linear(32, 10), Softmax]   # only an example</span><br><span class="line">layer.reverse()   # reverse the neural network, since our solving process is backward</span><br><span class="line">output_set = ([0.02, 0.82, 0.02, 0.02, 0.02, 0.02, 0.02, 0.02, 0.02, 0.02])   # only an example, the initial set only contains one element, which is our ultimate required output</span><br><span class="line"></span><br><span class="line"># loop through the neural network backwards</span><br><span class="line">for layer in layers:</span><br><span class="line">    layer_range = find_the_range_of_certain_layer(layer)</span><br><span class="line">    valid_output_set = intersection(output_set, layer_range) </span><br><span class="line">    solutions = []</span><br><span class="line">    for output in valid_output_set:   # for every output in the valid set, find its solution set and combine them together</span><br><span class="line">        solutions.append(find_all_solutions_of_certain_layer(layer, output))</span><br><span class="line">    output_set = union(solutions)</span><br><span class="line"></span><br><span class="line">input_set = output_set  # solved!</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>The full version of the above algorithm is theoretically right but impossible to implement in reality. We can modify the algorithm a little bit so that it becomes implementable:</p>
 <ul>
-<li>In a neural network, a hidden layer is just a group of mathematical expressions. When we want to get all inputs that eventually forward propagate to certain hidden layer value, we are actually trying to solve a system of mathematical expressions (non linear mostly).</li>
-<li>The algorithm of solving the equations in the context of neural network is as follows:</li>
-</ul>
-<pre data-role="codeBlock" data-info="" class="language-text text">**Natural Language Format**
-1. The set that contains only our desired output is the initial output set
-2. For a certain layer, find all solutions that forward propagate to the valid output set. Take the intersection of the solutions and the range of the previous layer as the valid output set for the previous layer.
-3. Loop the above procedure through the neural network backwards
-4. The solution set of the first layer is the solution set of the neural network with respect to our desired output
-
-<p><strong>Pseudo Code Format</strong></p>
-<h1 id="this-function-finds-all-solutions-of-a-certain-layer-given-a-certain-output"><a href="#this-function-finds-all-solutions-of-a-certain-layer-given-a-certain-output" class="headerlink" title="this function finds all solutions of a certain layer given a certain output"></a>this function finds all solutions of a certain layer given a certain output</h1><p>def find_all_solutions_of_certain_layer(layer, output):<br>    ### implementation<br>    return solution_set</p>
-<h1 id="this-function-finds-the-range-of-a-certain-layer-while-all-its-inputs-can-move-freely"><a href="#this-function-finds-the-range-of-a-certain-layer-while-all-its-inputs-can-move-freely" class="headerlink" title="this function finds the range of a certain layer while all its inputs can move freely"></a>this function finds the range of a certain layer while all its inputs can move freely</h1><p>def find_the_range_of_certain_layer(layer):<br>    ### implementation<br>    return range</p>
-<p>layer_list &#x3D; [Linear(64, 32), ReLU, Linear(32, 10), Softmax]   # only an example<br>layer.reverse()   # reverse the neural network, since our solving process is backward<br>output_set &#x3D; ([0.02, 0.82, 0.02, 0.02, 0.02, 0.02, 0.02, 0.02, 0.02, 0.02])   # only an example, the initial set only contains one element, which is our ultimate required output</p>
-<h1 id="loop-through-the-neural-network-backwards"><a href="#loop-through-the-neural-network-backwards" class="headerlink" title="loop through the neural network backwards"></a>loop through the neural network backwards</h1><p>for layer in layers:<br>    layer_range &#x3D; find_the_range_of_certain_layer(layer)<br>    valid_output_set &#x3D; intersection(output_set, layer_range)<br>    solutions &#x3D; []<br>    for output in valid_output_set:   # for every output in the valid set, find its solution set and combine them together<br>        solutions.append(find_all_solutions_of_certain_layer(layer, output))<br>    output_set &#x3D; union(solutions)</p>
-<p>input_set &#x3D; output_set  # solved!<br></pre><ul></p>
-<li>The full version of the above algorithm is theoretically right but impossible to implement in reality. We can modify the algorithm a little bit so that it becomes implementable:
-<ul>
-<li>When finding solutions of a certain layer with respect to a particular output, we don't find all of them. We only sample some solutions.</li>
+<li>When finding solutions of a certain layer with respect to a particular output, we don’t find all of them. We only sample some solutions.</li>
 <li>The details of the implementation are in the Appendix.</li>
 </ul>
 </li>
 </ul>
-<p>From a certain perspective, in essence, the information loss is simply a many-to-one relationship. When you only know that "one", you don't know which "many" brings you here. The above algorithm is just finding that "many" with respect to the "one".</p>
-<h3 class="crossnote-header" id="what-does-the-solution-set-look-like">What does the solution set look like?</h3>
-
-<ul>
-<li>Let's first look at an experiment of the above algorithm:</li>
+<p>From a certain perspective, in essence, the information loss is simply a many-to-one relationship. When you only know that “one”, you don’t know which “many” brings you here. The above algorithm is just finding that “many” with respect to the “one”.</p>
+<h3 id="What-does-the-solution-set-look-like"><a href="#What-does-the-solution-set-look-like" class="headerlink" title="What does the solution set look like?"></a>What does the solution set look like?</h3><ul>
+<li>Let’s first look at an experiment of the above algorithm:</li>
 </ul>
-<h4 class="crossnote-header" id="experiment">Experiment</h4>
-
-<ul>
-<li><strong>Steps</strong>
-<ul>
-<li>Take a 2-layer fully connected network trained on MNIST dataset as an example.
-<ul>
+<h4 id="Experiment"><a href="#Experiment" class="headerlink" title="Experiment"></a>Experiment</h4><ul>
+<li><strong>Steps</strong><ul>
+<li>Take a 2-layer fully connected network trained on MNIST dataset as an example. <ul>
 <li>The network structure is as follows: [Linear(784, 256), LeakyReLu(0.01), Linear(256, 10), Softmax]</li>
 <li>After training, the network reaches an accuracy of 94.31% on test dataset.</li>
 </ul>
@@ -82,132 +111,121 @@
 <li>Back-solve the network with respect to the output mentioned above.</li>
 </ul>
 </li>
-<li><strong>Results</strong>
-<ul>
+<li><strong>Results</strong><ul>
 <li>The left one is the randomly picked picture from test dataset. The right one is the solution input with respect to the output of the left one.</li>
-<li>
-<div style="display: flex; justify-content: space-between;">
-  <img src="3.png" width="45%">
-  <img src="3s.png" width="45%">
+<li><div style="display: flex; justify-content: space-between;">
+  <img src=3.png width=45% />
+  <img src=3s.png width=45% />
   </div>
-  <br>
-</li>
-<li>
-<div style="display: flex; justify-content: space-between;">
-  <img src="6.png" width="45%">
-  <img src="6s.png" width="45%">
+  <br /></li>
+<li><div style="display: flex; justify-content: space-between;">
+  <img src=6.png width=45% />
+  <img src=6s.png width=45% />
   </div>
-  <br>
-</li>
-<li>
-<div style="display: flex; justify-content: space-between;">
-  <img src="9.png" width="45%">
-  <img src="9s.png" width="45%">
-  </div>
-</li>
+  <br /></li>
+<li><div style="display: flex; justify-content: space-between;">
+  <img src=9.png width=45% />
+  <img src=9s.png width=45% />
+  </div></li>
 </ul>
 </li>
-<li><strong>Findings</strong>
-<ul>
+<li><strong>Findings</strong><ul>
 <li>Although the left and the right pictures share the same output that points to the label of the left one, the right one looks nothing like the left one.</li>
 </ul>
 </li>
 </ul>
-<p>Now let's go back to the question of what the solution set looks like.</p>
+<p>Now let’s go back to the question of what the solution set looks like.</p>
 <ul>
-<li><strong>Imagine the shape of the solution input set</strong>
-<ul>
-<li>It is easier to first imagine <strong>the shape of the solutions of a linear layer</strong>.
-<ul>
-<li>Below is the uniform formula of linear equations:<br>
-<span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>x</mi><mo>=</mo><msub><mi>x</mi><mi>s</mi></msub><mo>+</mo><munder><mo>∑</mo><mi>i</mi></munder><msub><mi>ϵ</mi><mi>i</mi></msub><mo>∗</mo><msub><mi>x</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">x = x_s + \sum_i\epsilon_i * x_i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">x</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.7333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1514em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">s</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:2.3277em;vertical-align:-1.2777em;"></span><span class="mop op-limits"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.05em;"><span style="top:-1.8723em;margin-left:0em;"><span class="pstrut" style="height:3.05em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span><span style="top:-3.05em;"><span class="pstrut" style="height:3.05em;"></span><span><span class="mop op-symbol large-op">∑</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.2777em;"><span></span></span></span></span></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord"><span class="mord mathnormal">ϵ</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.5806em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></span></li>
-<li><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>x</mi><mi>s</mi></msub></mrow><annotation encoding="application/x-tex">x_s</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.5806em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1514em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">s</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> represents the special solution, <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>x</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">x_i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.5806em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> represents all null solutions, <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>ϵ</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">\epsilon_i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.5806em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal">ϵ</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> represents arbitrary number within <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>R</mi></mrow><annotation encoding="application/x-tex">R</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.00773em;">R</span></span></span></span>. The number of <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>x</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">x_i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.5806em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> equals the number of free variables, which is smaller than the dimension of <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi></mrow><annotation encoding="application/x-tex">x</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">x</span></span></span></span>.</li>
-<li><strong>Suppose the number of free variables is <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">n</span></span></span></span> and the dimension of <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi></mrow><annotation encoding="application/x-tex">x</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">x</span></span></span></span> is <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>m</mi></mrow><annotation encoding="application/x-tex">m</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">m</span></span></span></span> (<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>m</mi><mo>&gt;</mo><mi>n</mi></mrow><annotation encoding="application/x-tex">m &gt; n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.5782em;vertical-align:-0.0391em;"></span><span class="mord mathnormal">m</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">&gt;</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">n</span></span></span></span>). Then the solution set of the linear layer is just a n-dimensional linear-shaped space in <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>R</mi><mi>m</mi></msup></mrow><annotation encoding="application/x-tex">R^m</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.00773em;">R</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.6644em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">m</span></span></span></span></span></span></span></span></span></span></span> space.</strong></li>
-<li>In <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>R</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">R^2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.00773em;">R</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span></span></span></span>, it is a line, a dot or an empty set. In <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>R</mi><mn>3</mn></msup></mrow><annotation encoding="application/x-tex">R^3</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.00773em;">R</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">3</span></span></span></span></span></span></span></span></span></span></span>, it is a plane, a line, a dot or an empty set. We are able to get a very intuitive idea of what it looks like even in high dimensional space. It is linear and it stretches across the whole space.</li>
+<li><strong>Imagine the shape of the solution input set</strong><ul>
+<li>It is easier to first imagine <strong>the shape of the solutions of a linear layer</strong>. <ul>
+<li>Below is the uniform formula of linear equations:<br>  $$x &#x3D; x_s + \sum_i\epsilon_i * x_i$$ </li>
+<li>$x_s$ represents the special solution, $x_i$ represents all null solutions, $\epsilon_i$ represents arbitrary number within $R$. The number of $x_i$ equals the number of free variables, which is smaller than the dimension of $x$. </li>
+<li><strong>Suppose the number of free variables is $n$ and the dimension of $x$ is $m$ ($m &gt; n$). Then the solution set of the linear layer is just a n-dimensional linear-shaped space in $R^m$ space.</strong></li>
+<li>In $R^2$, it is a line, a dot or an empty set. In $R^3$, it is a plane, a line, a dot or an empty set. We are able to get a very intuitive idea of what it looks like even in high dimensional space. It is linear and it stretches across the whole space.</li>
 <li><strong>Usually, we would have multiple outputs to back-solve in the middle of the neural network. In this case, the solution set of all valid outputs is just the union of different solution set of every valid output. After the union, many properties of a single solution set still remains, like some linear structure and the boundless stretching.</strong></li>
 </ul>
 </li>
-<li>Now let's examine what role the nonlinear layer is playing.
-<ul>
-<li>Take ReLU as an example.
-<ul>
-<li>When back-solving the ReLU layer, for every element, as long as it is positive, the corresponding solution element is definite. If it is zero, the corresponding element can be any non-positive number. If it is negative, there are no corresponding solution. Imagine in a <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>R</mi><mn>3</mn></msup></mrow><annotation encoding="application/x-tex">R^3</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.00773em;">R</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">3</span></span></span></span></span></span></span></span></span></span></span> space, the solution is a 2D plane. The plane crosses "zero-plane" at some line. Everything on this plane after this line will be truncated since it is unreachable by ReLU function. Every point on the line will be extended vertically downward. So the solution set will be a bent plane. Nonlinearity is added and this nonlinearity will be remembered when back-solving through further layers.</li>
+<li>Now let’s examine what role the nonlinear layer is playing.<ul>
+<li>Take ReLU as an example.<ul>
+<li>When back-solving the ReLU layer, for every element, as long as it is positive, the corresponding solution element is definite. If it is zero, the corresponding element can be any non-positive number. If it is negative, there are no corresponding solution. Imagine in a $R^3$ space, the solution is a 2D plane. The plane crosses “zero-plane” at some line. Everything on this plane after this line will be truncated since it is unreachable by ReLU function. Every point on the line will be extended vertically downward. So the solution set will be a bent plane. Nonlinearity is added and this nonlinearity will be remembered when back-solving through further layers.</li>
 </ul>
 </li>
 </ul>
 </li>
-<li>Up to this point, I believe we could get a very intuitive idea about why the solution picture looks nothing like the original one.
-<ul>
-<li><strong>The solution set is not a perfect copy of the distribution consistent with human mindset. Instead, it just contains the part of  distribution that interects with the set of all naturally generated pictures. The true solution set is extremely complex and is the product of all those linear layers and nonlinear layers. It includes many other irrelevant candidates unavoidably.</strong></li>
+<li>Up to this point, I believe we could get a very intuitive idea about why the solution picture looks nothing like the original one. <ul>
+<li><strong>The solution set is not a perfect copy of the distribution consistent with human mindset. Instead, it just contains the part of  distribution that interects with the set of all naturally generated pictures. The true solution set is extremely complex and is the product of all those linear layers and nonlinear layers. It includes many other irrelevant candidates unavoidably.</strong> </li>
 <li>The reason why neural network still works very well is that the inputs we usually feed in a network are already in the set of all naturally generated pictures.</li>
 </ul>
 </li>
 </ul>
 </li>
 </ul>
-<p>After thinking through the following things, I find many odd behaviors of neural networks intuitive.</p>
+<p>After thinking through the following things, I find many odd behaviors of neural networks intuitive. </p>
 <ul>
-<li>For example, we could fool the neural network to recognize an elephant as a koala by adding a tiny noise. And the two pictures look almost the same.
-<ul>
-<li>I think this is due to the extremely complex solution structure. What the network actually recognizes as a koala is a set containing both the normal koala pictures generated naturally and other solutions that radiate through the whole space. There are many solution candidates of koala just near an ordinary elephant picture. However, they are all beyond the normal scope of naturally generated pictures, which means they won't interfere with the use of neural network.</li>
-</ul>
-</li>
-</ul>
-<div style="display: flex; justify-content: space-between;">
-<img src="elephants.jpg" width="100%" style="margin: 20px">
-<img src="koala_from_elephant.jpg" width="100%" style="margin: 20px">
+<li>For example, we could fool the neural network to recognize an elephant as a koala by adding a tiny noise. And the two pictures look almost the same. <ul>
+<li>I think this is due to the extremely complex solution structure. What the network actually recognizes as a koala is a set containing both the normal koala pictures generated naturally and other solutions that radiate through the whole space. There are many solution candidates of koala just near an ordinary elephant picture. However, they are all beyond the normal scope of naturally generated pictures, which means they won’t interfere with the use of neural network. <div style="display: flex; justify-content: space-between;">
+<img src=elephants.jpg width=100% style="margin: 20px"/>
+<img src=koala_from_elephant.jpg width=100% style="margin: 20px"/>
 </div>
 <div style="display: flex; justify-content: space-between;">
 <p>elephant, according to VGG16 pretrained on Imagenet</p>
 <p>koala, according to VGG16 pretrained on Imagenet</p>
 </div>
-<br>
+<br />
 <div style="display: flex; justify-content: space-between;">
-<img src="koala_from_elephant_minus.jpg" width="100%" style="margin: 20px">
-<img src="koala_from_elephant_minus_10times.jpg" width="100%" style="margin: 20px">
+<img src=koala_from_elephant_minus.jpg width=100% style="margin: 20px"/>
+<img src=koala_from_elephant_minus_10times.jpg width=100% style="margin: 20px"/>
 </div>
 <div style="display: flex; justify-content: space-between;">
 <p>the difference between the above two pictures</p>
 <p>the difference after maginified ten times</p>
-</div>
-<h2 class="crossnote-header" id="appendix">Appendix</h2>
-
-<h3 class="crossnote-header" id="back-solver-doc">Back-solver Doc</h3>
-
-<ul>
-<li>To facilitate finding the one-to-many relationship mentioned above, I wrote a tiny package for this specific use. For every layer, the package basically computes the solutions with respect to the required layer output. And this process is repeated from the last layer to the first layer. The intersection of all solutions of a certain layer and the range of the previous layer is the valid output of the previous layer. The solution set of the first layer is the solution of the whole neural network with respect to the initially dictated last layer output.</li>
-<li>The core of this package is a linear equation system solver using Gaussian elimination method. I implemented this solver using purely numpy basic methods. The linear solver is responsible for the "back-solving" process of all Linear layers and other layers that involves linear equations, like Softmax.
-<ul>
-<li>Precision plays a very important role in solving linear equations, since the computer performs finite digit operations at the very bottom. According to my experiment, when the matrix gets bigger and complex, low precision will result in answers that have non-negligible error. The solution is to use high enough precision. I used numpy.float64, which worked well in my experiment context.</li>
-<li>Another thing to mention is that this solver couldn't solve every linear equations. For those systems that will encounter absolute zero during elimination, the finite nature of computer will sometimes result in a non-zero number where it should be a zero instead. This makes a huge difference. Because it can't be mitigated by increasing the precision. Luckily, the probability that we encounter this type of situation is zero. So we can just ignore this scenario and apply Gaussian elimination on the computer anyway.</li>
+</div></li>
 </ul>
 </li>
-<li>In the <a href="http://engine.py">engine.py</a>, I wrote the base class that is responsible for sample solutions from the solution set. For every type of neural network layer, we could implement a subclass that performs the "back-solving" and "sampling" steps. I only implement the subclass for linear layer, softmax, relu and leaky relu.</li>
-<li>The package is incomplete in the following aspects:
-<ul>
+</ul>
+<h2 id="Appendix"><a href="#Appendix" class="headerlink" title="Appendix"></a>Appendix</h2><h3 id="Back-solver-Doc"><a href="#Back-solver-Doc" class="headerlink" title="Back-solver Doc"></a>Back-solver Doc</h3><ul>
+<li>To facilitate finding the one-to-many relationship mentioned above, I wrote a tiny package for this specific use. For every layer, the package basically computes the solutions with respect to the required layer output. And this process is repeated from the last layer to the first layer. The intersection of all solutions of a certain layer and the range of the previous layer is the valid output of the previous layer. The solution set of the first layer is the solution of the whole neural network with respect to the initially dictated last layer output.</li>
+<li>The core of this package is a linear equation system solver using Gaussian elimination method. I implemented this solver using purely numpy basic methods. The linear solver is responsible for the “back-solving” process of all Linear layers and other layers that involves linear equations, like Softmax.<ul>
+<li>Precision plays a very important role in solving linear equations, since the computer performs finite digit operations at the very bottom. According to my experiment, when the matrix gets bigger and complex, low precision will result in answers that have non-negligible error. The solution is to use high enough precision. I used numpy.float64, which worked well in my experiment context.</li>
+<li>Another thing to mention is that this solver couldn’t solve every linear equations. For those systems that will encounter absolute zero during elimination, the finite nature of computer will sometimes result in a non-zero number where it should be a zero instead. This makes a huge difference. Because it can’t be mitigated by increasing the precision. Luckily, the probability that we encounter this type of situation is zero. So we can just ignore this scenario and apply Gaussian elimination on the computer anyway.</li>
+</ul>
+</li>
+<li>In the engine.py, I wrote the base class that is responsible for sample solutions from the solution set. For every type of neural network layer, we could implement a subclass that performs the “back-solving” and “sampling” steps. I only implement the subclass for linear layer, softmax, relu and leaky relu.</li>
+<li>The package is incomplete in the following aspects:<ul>
 <li>The sampling method needs to be further studied.</li>
 <li>We need a way to constrain the sampled solutions to be in a certain range, since layers like relu only output values in a give range.</li>
 <li>More subclasses to be implemented</li>
 <li>More robust linear equation system solver needed</li>
-<li>...</li>
+<li>…</li>
 </ul>
 </li>
-<li>Here is the repo link to the package:
-<ul>
-<li><a href="https://github.com/scottyaohk/Back-solve-neural-network">https://github.com/scottyaohk/Back-solve-neural-network</a></li>
+<li>Here is the repo link to the package:<ul>
+<li><a target="_blank" rel="noopener" href="https://github.com/scottyaohk/Back-solve-neural-network">https://github.com/scottyaohk/Back-solve-neural-network</a></li>
 </ul>
 </li>
 </ul>
 
-<pre><code>  &lt;/div&gt;
+  </div>
+  
+</article>
+    </main>
+    <footer id="footer">
+  Copyright &copy;
+  2023
+  Shawn Yiu
   
   
+    <a class="social-links" target="_blank" rel="noopener" href="https://github.com/jylzs369"><i class="blogfont">&#xe6b7; </i></a>
+  
+    <a class="social-links" href="mailto:jylzs369@163.com"><i class="blogfont">&#xe61a; </i></a>
+  
+    <a class="social-links" href="/atom.xml"><i class="blogfont">&#xe640; </i></a>
+  
+  
+</footer>
+    <!-- scripts -->
 
+<script src="/scripts/main.js"></script>
 
-
-
-
-
-
-&lt;/body&gt;&lt;/html&gt;
-</code></pre>
+  </body>
+</html>
