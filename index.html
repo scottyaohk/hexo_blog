@@ -152,7 +152,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2023/09/24/2023-09-24/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/09/24/info-another-perspective/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -166,7 +166,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2023/09/24/2023-09-24/" class="post-title-link" itemprop="url">An intuitive way to understand information</a>
+            <a href="/2023/09/24/info-another-perspective/" class="post-title-link" itemprop="url">An intuitive way to understand information</a>
         </h2>
 
         <div class="post-meta">
@@ -177,7 +177,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2023-09-24 15:28:46 / Modified: 21:14:07" itemprop="dateCreated datePublished" datetime="2023-09-24T15:28:46+08:00">2023-09-24</time>
+              <time title="Created: 2023-09-24 15:28:46 / Modified: 22:26:33" itemprop="dateCreated datePublished" datetime="2023-09-24T15:28:46+08:00">2023-09-24</time>
             </span>
 
           
@@ -191,168 +191,15 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1>An intuitive way to understand information</h1>
-<h2 id="Intro">Intro</h2>
-<p>We all know that information about the input can be stored in a hidden layer in some way that is very hard for us human to understand. But how do we understand this reality intuitively? This article provides an intuition behind it and some related experiments to support the intuition.</p>
-<h2 id="The-intuition">The intuition</h2>
-<ul>
-<li>For a certain hidden layer in a neural network, if we keep the output values of this layer fixed, we should be able to find a set of inputs that all forward propagate to this value (the input dimension has to be larger than the hidden layer, which is usually the case). This one-to-many relationship tells us that if we know the values of the hidden layer, we know that the input has to be one of those inputs in the set. <strong>The information of the hidden layer value equals to the corresponding solution set.</strong></li>
-<li>Furthermore, some <em>subset</em> of this set might share some common features (this is up to the weights and structure of the network). These common features are what we usually think the hidden layer value is representing.
-<ul>
-<li>As for why it’s a subset, I will be covering this in the second half of this article.</li>
-</ul>
-</li>
-</ul>
-<p><em>Notice that it is better to read this paragraph without resorting to notions like “entropy”, “mutual information”, etc. We just focus on feeling the reality as it is.</em></p>
-<h2 id="Investigation">Investigation</h2>
-<h3 id="How-do-we-get-the-solution-set">How do we get the solution set?</h3>
-<ul>
-<li>In a neural network, a hidden layer is just a group of mathematical expressions. When we want to get all inputs that eventually forward propagate to certain hidden layer value, we are actually trying to solve a system of mathematical expressions (non linear mostly).</li>
-<li>The algorithm of solving the equations in the context of neural network is as follows:</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">**Natural Language Format**</span><br><span class="line">1. The set that contains only our desired output is the initial output set</span><br><span class="line">2. For a certain layer, find all solutions that forward propagate to the valid output set. Take the intersection of the solutions and the range of the previous layer as the valid output set for the previous layer.</span><br><span class="line">3. Loop the above procedure through the neural network backwards</span><br><span class="line">4. The solution set of the first layer is the solution set of the neural network with respect to our desired output</span><br><span class="line"></span><br><span class="line">**Pseudo Code Format**</span><br><span class="line"># this function finds all solutions of a certain layer given a certain output</span><br><span class="line">def find_all_solutions_of_certain_layer(layer, output):</span><br><span class="line">    ### implementation</span><br><span class="line">    return solution_set</span><br><span class="line"></span><br><span class="line"># this function finds the range of a certain layer while all its inputs can move freely</span><br><span class="line">def find_the_range_of_certain_layer(layer):</span><br><span class="line">    ### implementation</span><br><span class="line">    return range</span><br><span class="line"></span><br><span class="line">layer_list = [Linear(64, 32), ReLU, Linear(32, 10), Softmax]   # only an example</span><br><span class="line">layer.reverse()   # reverse the neural network, since our solving process is backward</span><br><span class="line">output_set = ([0.02, 0.82, 0.02, 0.02, 0.02, 0.02, 0.02, 0.02, 0.02, 0.02])   # only an example, the initial set only contains one element, which is our ultimate required output</span><br><span class="line"></span><br><span class="line"># loop through the neural network backwards</span><br><span class="line">for layer in layers:</span><br><span class="line">    layer_range = find_the_range_of_certain_layer(layer)</span><br><span class="line">    valid_output_set = intersection(output_set, layer_range) </span><br><span class="line">    solutions = []</span><br><span class="line">    for output in valid_output_set:   # for every output in the valid set, find its solution set and combine them together</span><br><span class="line">        solutions.append(find_all_solutions_of_certain_layer(layer, output))</span><br><span class="line">    output_set = union(solutions)</span><br><span class="line"></span><br><span class="line">input_set = output_set  # solved!</span><br></pre></td></tr></table></figure>
-<ul>
-<li>The full version of the above algorithm is theoretically right but impossible to implement in reality. We can modify the algorithm a little bit so that it becomes implementable:
-<ul>
-<li>When finding solutions of a certain layer with respect to a particular output, we don’t find all of them. We only sample some solutions.</li>
-<li>The details of the implementation are in the Appendix.</li>
-</ul>
-</li>
-</ul>
-<p>From a certain perspective, in essence, the information loss is simply a many-to-one relationship. When you only know that “one”, you don’t know which “many” brings you here. The above algorithm is just finding that “many” with respect to the “one”.</p>
-<h3 id="What-does-the-solution-set-look-like">What does the solution set look like?</h3>
-<ul>
-<li>Let’s first look at an experiment of the above algorithm:</li>
-</ul>
-<h4 id="Experiment">Experiment</h4>
-<ul>
-<li><strong>Steps</strong>
-<ul>
-<li>Take a 2-layer fully connected network trained on MNIST dataset as an example.
-<ul>
-<li>The network structure is as follows: [Linear(784, 256), LeakyReLu(0.01), Linear(256, 10), Softmax]</li>
-<li>After training, the network reaches an accuracy of 94.31% on test dataset.</li>
-</ul>
-</li>
-<li>Randomly pick a picture from test dataset. Forward propagate the picture through the network. Record the final output.</li>
-<li>Back-solve the network with respect to the output mentioned above.</li>
-</ul>
-</li>
-<li><strong>Results</strong>
-<ul>
-<li>The left one is the randomly picked picture from test dataset. The right one is the solution input with respect to the output of the left one.</li>
-<li>
-<div style="display: flex; justify-content: space-between;">
-  <img src=3.png width=45% />
-  <img src=3s.png width=45% />
-  </div>
-  <br />
-</li>
-<li>
-<div style="display: flex; justify-content: space-between;">
-  <img src=6.png width=45% />
-  <img src=6s.png width=45% />
-  </div>
-  <br />
-</li>
-<li>
-<div style="display: flex; justify-content: space-between;">
-  <img src=9.png width=45% />
-  <img src=9s.png width=45% />
-  </div>
-</li>
-</ul>
-</li>
-<li><strong>Findings</strong>
-<ul>
-<li>Although the left and the right pictures share the same output that points to the label of the left one, the right one looks nothing like the left one.</li>
-</ul>
-</li>
-</ul>
-<p>Now let’s go back to the question of what the solution set looks like.</p>
-<ul>
-<li><strong>Imagine the shape of the solution input set</strong>
-<ul>
-<li>It is easier to first imagine <strong>the shape of the solutions of a linear layer</strong>.
-<ul>
-<li>Below is the uniform formula of linear equations:<br>
-$$x = x_s + \sum_i\epsilon_i * x_i$$</li>
-<li>$x_s$ represents the special solution, $x_i$ represents all null solutions, $\epsilon_i$ represents arbitrary number within $R$. The number of $x_i$ equals the number of free variables, which is smaller than the dimension of $x$.</li>
-<li><strong>Suppose the number of free variables is $n$ and the dimension of $x$ is $m$ ($m &gt; n$). Then the solution set of the linear layer is just a n-dimensional linear-shaped space in $R^m$ space.</strong></li>
-<li>In $R^2$, it is a line, a dot or an empty set. In $R^3$, it is a plane, a line, a dot or an empty set. We are able to get a very intuitive idea of what it looks like even in high dimensional space. It is linear and it stretches across the whole space.</li>
-<li><strong>Usually, we would have multiple outputs to back-solve in the middle of the neural network. In this case, the solution set of all valid outputs is just the union of different solution set of every valid output. After the union, many properties of a single solution set still remains, like some linear structure and the boundless stretching.</strong></li>
-</ul>
-</li>
-<li>Now let’s examine what role the nonlinear layer is playing.
-<ul>
-<li>Take ReLU as an example.
-<ul>
-<li>When back-solving the ReLU layer, for every element, as long as it is positive, the corresponding solution element is definite. If it is zero, the corresponding element can be any non-positive number. If it is negative, there are no corresponding solution. Imagine in a $R^3$ space, the solution is a 2D plane. The plane crosses “zero-plane” at some line. Everything on this plane after this line will be truncated since it is unreachable by ReLU function. Every point on the line will be extended vertically downward. So the solution set will be a bent plane. Nonlinearity is added and this nonlinearity will be remembered when back-solving through further layers.</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>Up to this point, I believe we could get a very intuitive idea about why the solution picture looks nothing like the original one.
-<ul>
-<li><strong>The solution set is not a perfect copy of the distribution consistent with human mindset. Instead, it just contains the part of  distribution that interects with the set of all naturally generated pictures. The true solution set is extremely complex and is the product of all those linear layers and nonlinear layers. It includes many other irrelevant candidates unavoidably.</strong></li>
-<li>The reason why neural network still works very well is that the inputs we usually feed in a network are already in the set of all naturally generated pictures.</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<p>After thinking through the following things, I find many odd behaviors of neural networks intuitive.</p>
-<ul>
-<li>For example, we could fool the neural network to recognize an elephant as a koala by adding a tiny noise. And the two pictures look almost the same.
-<ul>
-<li>I think this is due to the extremely complex solution structure. What the network actually recognizes as a koala is a set containing both the normal koala pictures generated naturally and other solutions that radiate through the whole space. There are many solution candidates of koala just near an ordinary elephant picture. However, they are all beyond the normal scope of naturally generated pictures, which means they won’t interfere with the use of neural network.</li>
-</ul>
-</li>
-</ul>
-<div style="display: flex; justify-content: space-between;">
-<img src=elephants.jpg width=100% style="margin: 20px"/>
-<img src=koala_from_elephant.jpg width=100% style="margin: 20px"/>
-</div>
-<div style="display: flex; justify-content: space-between;">
-<p>elephant, according to VGG16 pretrained on Imagenet</p>
-<p>koala, according to VGG16 pretrained on Imagenet</p>
-</div>
-<br />
-<div style="display: flex; justify-content: space-between;">
-<img src=koala_from_elephant_minus.jpg width=100% style="margin: 20px"/>
-<img src=koala_from_elephant_minus_10times.jpg width=100% style="margin: 20px"/>
-</div>
-<div style="display: flex; justify-content: space-between;">
-<p>the difference between the above two pictures</p>
-<p>the difference after maginified ten times</p>
-</div>
-<h2 id="Appendix">Appendix</h2>
-<h3 id="Back-solver-Doc">Back-solver Doc</h3>
-<ul>
-<li>To facilitate finding the one-to-many relationship mentioned above, I wrote a tiny package for this specific use. For every layer, the package basically computes the solutions with respect to the required layer output. And this process is repeated from the last layer to the first layer. The intersection of all solutions of a certain layer and the range of the previous layer is the valid output of the previous layer. The solution set of the first layer is the solution of the whole neural network with respect to the initially dictated last layer output.</li>
-<li>The core of this package is a linear equation system solver using Gaussian elimination method. I implemented this solver using purely numpy basic methods. The linear solver is responsible for the “back-solving” process of all Linear layers and other layers that involves linear equations, like Softmax.
-<ul>
-<li>Precision plays a very important role in solving linear equations, since the computer performs finite digit operations at the very bottom. According to my experiment, when the matrix gets bigger and complex, low precision will result in answers that have non-negligible error. The solution is to use high enough precision. I used numpy.float64, which worked well in my experiment context.</li>
-<li>Another thing to mention is that this solver couldn’t solve every linear equations. For those systems that will encounter absolute zero during elimination, the finite nature of computer will sometimes result in a non-zero number where it should be a zero instead. This makes a huge difference. Because it can’t be mitigated by increasing the precision. Luckily, the probability that we encounter this type of situation is zero. So we can just ignore this scenario and apply Gaussian elimination on the computer anyway.</li>
-</ul>
-</li>
-<li>In the <a target="_blank" rel="noopener" href="http://engine.py">engine.py</a>, I wrote the base class that is responsible for sample solutions from the solution set. For every type of neural network layer, we could implement a subclass that performs the “back-solving” and “sampling” steps. I only implement the subclass for linear layer, softmax, relu and leaky relu.</li>
-<li>The package is incomplete in the following aspects:
-<ul>
-<li>The sampling method needs to be further studied.</li>
-<li>We need a way to constrain the sampled solutions to be in a certain range, since layers like relu only output values in a give range.</li>
-<li>More subclasses to be implemented</li>
-<li>More robust linear equation system solver needed</li>
-<li>…</li>
-</ul>
-</li>
-<li>Here is the repo link to the package:
-<ul>
-<li><a target="_blank" rel="noopener" href="https://github.com/scottyaohk/Back-solve-neural-network">https://github.com/scottyaohk/Back-solve-neural-network</a></li>
-</ul>
-</li>
-</ul>
-
+          <p>这是显示在首页的概述，正文内容均会被隐藏。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2023/09/24/info-another-perspective/">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -394,10 +241,16 @@ $$x = x_s + \sum_i\epsilon_i * x_i$$</li>
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2023-09-14 10:07:16 / Modified: 11:03:31" itemprop="dateCreated datePublished" datetime="2023-09-14T10:07:16+08:00">2023-09-14</time>
+              <time title="Created: 2023-09-14 10:07:16" itemprop="dateCreated datePublished" datetime="2023-09-14T10:07:16+08:00">2023-09-14</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2023-09-26 10:10:35" itemprop="dateModified" datetime="2023-09-26T10:10:35+08:00">2023-09-26</time>
+              </span>
 
           
 
@@ -410,24 +263,15 @@ $$x = x_s + \sum_i\epsilon_i * x_i$$</li>
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1>Chat with Author</h1>
-<h2 id="Intro">Intro</h2>
-<p>This is a project that let you chat with any characters. For example, you can chat with Karl Marx (the author of Das Kapital), Siddhartha (the protagonist in Hermann Hesse’s book), etc. Let’s first see the demo.</p>
-<p><img src="ChatWithAuthor/siddhartha_emb.jpeg" alt="unavailable" title="asking Marx.ai how to reach communism"><br>
-<img src="ChatWithAuthor/marx_emb.jpeg" alt="unavailable" title="asking Marx.ai how to reach communism"></p>
-<h2 id="Implementation">Implementation</h2>
-<p>The implementation of this chatbot is incredibly simple. With langchain and gradio, the whole stack can be built within 70 lines of code.<br>
-Take the Marx chatbot as an example:</p>
-<ul>
-<li>I first downloaded Das Kapital from Internet. Then use langchain to divide the texts into chunks and there should be some overlap between chunks, to ensure the integrity of sentences. I set the chunk size and overlap to 600 and 100.</li>
-<li>For each chunk, we need to calculate the embedding, which represent the “meaning” of this chunk. This step can be easily done with langchain and a vector database like FAISS. Btw, the cost of calculating embedding is very small, since the API of openai embedding model is very cheap.</li>
-<li>Now is the time to build the chatbot itself. We just make some variation to the traditional chatbot. When we pass in the question, we first calculate the embedding of the question and search through the vector database to find the most similar chunk. Here the similarity of “meaning” is measured by the distance of the two embeddings. (worth further exploring)</li>
-<li>After we find the closest chunk, we plug it into our prompt. Pass the prompt to openai to fetch the answer.</li>
-<li>Use gradio to build the interface.</li>
-</ul>
-<p>Link to the repo: []</p>
-<h2 id="Further-Improvements">Further Improvements</h2>
-
+          <p>这是显示在首页的概述，正文内容均会被隐藏。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2023/09/14/ChatWithAuthor/">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
